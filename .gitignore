@@ -1,0 +1,17 @@
+# Environment-specific (should never be committed)
+android-dev/scripts/.env
+
+# OS temp files
+.DS_Store
+Thumbs.db
+*.log
+
+# IDE
+.idea/
+.vscode/
+*.iml
+
+# Beads / Dolt files (added by bd init)
+.dolt/
+*.db
+.beads-credential-key

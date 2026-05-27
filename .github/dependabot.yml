@@ -1,0 +1,10 @@
+# Dependabot for agent skills — monitors for spec changes
+# This repo is markdown + shell scripts, not a language dependency manager.
+# Useful if we ever add npm/Python/JS tooling.
+
+version: 2
+updates:
+  - package-ecosystem: "github-actions"
+    directory: "/"
+    schedule:
+      interval: "weekly"
