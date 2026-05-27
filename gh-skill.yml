@@ -1,0 +1,11 @@
+# gh-skill.yml — Multi-skill manifest for this repository
+# Declares all agent skills available in this repo
+# See: https://agentskills.io/specification
+
+skills:
+  - name: build-mobile
+    path: build-mobile/SKILL.md
+    description: Android, Flutter, KMP, and SwiftUI development toolkit with SDK tooling workflows, cross-platform compatibility matrices, and iOS/macOS remote Mac build guidance.
+    source: github:vl4dt/android-dev-skill/build-mobile
+    license: Apache-2.0
+    version: 2.0.0

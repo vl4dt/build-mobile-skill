@@ -1,6 +1,6 @@
-# Android Dev Skill for AI Coding Agents
+# Build Mobile Skill for AI Coding Agents
 
-> A portable, open-standard Agent Skill for Android, Flutter, and Kotlin Multiplatform development.
+> A portable, open-standard Agent Skill for Android, Flutter, KMP, and SwiftUI development.
 
 [![License: Apache-2.0](https://img.shields.io/badge/License-Apache--2.0-blue.svg)](LICENSE)
 [![Agent Skills](https://custom-icon-badges.demolab.com/badge/Agent%20Skills-9cf?logo=star&logoColor=fff)](https://agentskills.io)
@@ -8,14 +8,17 @@
 
 ## Overview
 
-This skill gives AI coding agents deep expertise in Android, Flutter, and Kotlin Multiplatform (KMP) development. It encodes project-specific environment details, SDK tooling workflows, compatibility matrices, and remote build infrastructure — so the agent scaffolds, builds, tests, and debugs mobile apps using proper SDK commands instead of manual file manipulation.
+This skill gives AI coding agents deep expertise in **Android, Flutter, Kotlin Multiplatform (KMP), and SwiftUI** development. It encodes SDK-first workflows, cross-platform compatibility matrices, and iOS/macOS build guidance for remote Mac setups — so the agent scaffolds, builds, tests, and debugs mobile apps using proper SDK commands instead of manual file manipulation.
 
 ## What's Included
 
 | File | Purpose |
 |------|---------|
-| `SKILL.md` | Main instructions — environment, golden rules, workflows, quick commands |
-| `REFERENCE.md` | Detailed templates, Gradle configs, Compose/KMP patterns |
+| `SKILL.md` | Main instructions — environment, golden rules, workflows |
+| `REFERENCE-GRADLE.md` | Gradle templates, KMP structure, Compose testing |
+| `REFERENCE-FLUTTER.md` | Pubspec essentials, state management, folder structure |
+| `REFERENCE-COMPOSE.md` | Compose testing patterns |
+| `REFERENCE-SWIFTUI.md` | SwiftUI fundamentals, Xcode CLI, remote Mac setup |
 | `scripts/android-env.sh` | Environment audit script — refreshes cached SDK state |
 
 ## Quick Install
@@ -24,25 +27,25 @@ This skill gives AI coding agents deep expertise in Android, Flutter, and Kotlin
 
 ```bash
 # Install from this repository
-gh skill install YOUR-USERNAME/android-dev-skill android-dev
+gh skill install vl4dt/android-dev-skill build-mobile
 
 # Or pin to a specific release
-gh skill install YOUR-USERNAME/android-dev-skill android-dev --pin v1.0.0
+gh skill install vl4dt/android-dev-skill build-mobile --pin v2.0.0
 ```
 
 ### Via Pi (pi-mono)
 
 ```bash
 # Install directly from GitHub
-pi install git+https://github.com/YOUR-USERNAME/android-dev-skill.git#android-dev
+pi install git+https://github.com/vl4dt/android-dev-skill.git#build-mobile
 ```
 
 ### Manual
 
 ```bash
 # Clone and symlink
-git clone https://github.com/YOUR-USERNAME/android-dev-skill.git
-ln -s $(pwd)/android-dev-skill/android-dev ~/.pi/agent/skills/android-dev
+git clone https://github.com/vl4dt/android-dev-skill.git
+ln -s $(pwd)/android-dev-skill/build-mobile ~/.pi/agent/skills/build-mobile
 ```
 
 ## Compatible Agent Hosts
@@ -60,23 +63,25 @@ See the full [client showcase](https://agentskills.io/clients) for more.
 
 ## Key Features
 
-- **Pre-cached environment** — SDK paths, JDK version, Flutter/Dart/Kotlin versions
 - **SDK-first workflows** — always prefer `flutter pub add`, `sdkmanager`, `avdmanager`, `gradlew`
-- **Compatibility matrices** — AGP ↔ Kotlin ↔ Gradle ↔ JDK version guards
-- **Remote Mac integration** — iOS/macOS builds over SSH to a remote MacBook Pro
+- **Compatibility matrices** — AGP ↔ Kotlin ↔ Gradle ↔ JDK ↔ Compose ↔ Flutter version guards
 - **KMP project scaffolding** — shared module + Android app module patterns
+- **SwiftUI fundamentals** — views, state management, MVVM, navigation, concurrency
+- **Remote Mac build guidance** — SSH-based iOS/macOS builds (user-configured)
 - **Environment audit script** — `scripts/android-env.sh` to refresh cached state
+- **Split reference files** — GRADLE, FLUTTER, COMPOSE, SWIFTUI for easy navigation
 
-## Development
-
-To modify this skill, edit the files in `android-dev/`. The skill directory is self-contained and follows the Agent Skills spec:
+## Directory Structure
 
 ```
-android-dev/
-├── SKILL.md           # Main instructions (required)
-├── REFERENCE.md       # Detailed docs (split for >100 lines)
+build-mobile/
+├── SKILL.md                    # Main instructions (required, <100 lines)
+├── REFERENCE-GRADLE.md         # Gradle templates, KMP, Compose testing
+├── REFERENCE-FLUTTER.md        # Pubspec, state management, patterns
+├── REFERENCE-COMPOSE.md        # Compose testing patterns
+├── REFERENCE-SWIFTUI.md        # SwiftUI, Xcode CLI, remote Mac
 └── scripts/
-    └── android-env.sh # Environment audit script
+    └── android-env.sh          # Environment audit script
 ```
 
 ## Publishing
