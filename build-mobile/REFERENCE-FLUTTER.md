@@ -2,12 +2,58 @@
 
 ## Scaffold a Flutter Project
 
+### On Windows (no macOS available)
+
 ```bash
-flutter create my_app --org com.example --platforms android,windows,web
+# Create project with platforms available on Windows
+flutter create my_app --org com.example --platforms android,web
+
 cd my_app && flutter pub get
-flutter create . --platforms ios    # add iOS
-flutter create . --platforms macos  # add macOS
+
+# ⚠️ iOS and macOS platforms CANNOT be generated on Windows
+# You must use a Mac, or add them later on a Mac machine
+flutter create . --platforms ios    # Requires macOS
+flutter create . --platforms macos  # Requires macOS
 ```
+
+### On macOS (full platform support)
+
+```bash
+# Create with ALL platforms at once
+flutter create my_app --org com.example --platforms android,ios,web,macos,windows,linux
+
+cd my_app && flutter pub get
+
+# To ADD a platform to an existing project
+flutter create . --platforms ios
+flutter create . --platforms macos
+flutter create . --platforms linux
+flutter create . --platforms windows
+```
+
+### Adding iOS/macOS to an Existing Project from Windows
+
+If your project was created without iOS/macOS:
+
+1. **On a Mac**, clone the repo or copy the project
+2. Run `flutter create . --platforms ios` and `flutter create . --platforms macos`
+3. Commit the generated `ios/` and `macos/` folders
+4. Push back to your Windows machine
+
+Alternatively, use [FlutterGen](https://fluttergen.com/) or manual setup for iOS build configs if you only need Android development locally.
+
+### Platform Requirements Summary
+
+| Platform | Windows | macOS | Linux | Notes |
+|---|---|---|---|---|
+| Android | ✅ | ✅ | ✅ | Requires Android SDK |
+| iOS | ❌ | ✅ | ❌ | Requires macOS + Xcode |
+| Web | ✅ | ✅ | ✅ | Browser-based, no IDE needed |
+| Desktop | ✅ | ✅ | ✅ | Windows: no setup. macOS: needs Xcode. Linux: GTK |
+| macOS | ❌ | ✅ | ❌ | Requires macOS + Xcode |
+| Linux | ❌ | ✅ | ✅ | Requires GTK development packages |
+
+> **WARNING:** The `flutter create . --platforms ios` and `--platforms macos` commands will **fail silently or throw an error on Windows**. Always check your host OS before adding Apple platforms.
 
 ## main.dart (minimal)
 
@@ -166,30 +212,31 @@ test/
 
 ## Common Flutter Dependencies
 
-| Category | Package | Dependency |
-|---|---|---|
-| State (Provider) | provider | `provider: ^6.1.5` |
-| State (Riverpod) | flutter_riverpod | `flutter_riverpod: ^2.7.0` |
-| State (BLoC) | flutter_bloc | `flutter_bloc: ^9.1.0` |
-| HTTP | dio | `dio: ^5.8.0` |
-| HTTP | http | `http: ^1.3.0` |
-| Routing | go_router | `go_router: ^16.3.0` |
-| Storage (prefs) | shared_preferences | `shared_preferences: ^2.5.0` |
-| Storage (Hive) | hive + hive_flutter | `hive: ^2.2.4`, `hive_flutter: ^1.1.1` |
-| Storage (SQLite) | drift | `drift: ^2.26.0` |
-| JSON | json_serializable + json_annotation | `json_serializable: ^6.9.0`, `build_runner: ^2.5.0` |
-| Image Picker | image_picker | `image_picker: ^1.2.0` |
-| Charts | fl_chart | `fl_chart: ^1.0.0` |
-| Permissions | permission_handler | `permission_handler: ^12.0.0` |
-| Local Notifications | flutter_local_notifications | `flutter_local_notifications: ^18.0.0` |
-| Firebase Core | firebase_core | `firebase_core: ^4.2.0` |
-| Firebase Auth | firebase_auth | `firebase_auth: ^6.1.0` |
-| SVG | flutter_svg | `flutter_svg: ^2.0.17` |
-| PDF | printing + pdf | `printing: ^5.14.0`, `pdf: ^3.12.0` |
-| Deep Links | app_links | `app_links: ^6.4.0` |
-| Device Info | device_info_plus | `device_info_plus: ^12.1.0` |
+| Category | Package | Dependency | Notes |
+|---|---|---|---|
+| State (Provider) | provider | `provider: ^6.1.5` | // @version-check Provider — EXAMPLE pin |
+| State (Riverpod) | flutter_riverpod | `flutter_riverpod: ^2.7.0` | // @version-check Riverpod — EXAMPLE pin |
+| State (BLoC) | flutter_bloc | `flutter_bloc: ^9.1.0` | // @version-check BLoC — EXAMPLE pin |
+| HTTP | dio | `dio: ^5.8.0` | // @version-check Dio — EXAMPLE pin |
+| HTTP | http | `http: ^1.3.0` | // @version-check http — EXAMPLE pin |
+| Routing | go_router | `go_router: ^16.3.0` | // @version-check go_router — EXAMPLE pin |
+| Storage (prefs) | shared_preferences | `shared_preferences: ^2.5.0` | // @version-check shared_preferences — EXAMPLE pin |
+| Storage (Hive) | hive + hive_flutter | `hive: ^2.2.4`, `hive_flutter: ^1.1.1` | // @version-check Hive — EXAMPLE pin |
+| Storage (SQLite) | drift | `drift: ^2.26.0` | // @version-check Drift — EXAMPLE pin |
+| JSON | json_serializable + json_annotation | `json_serializable: ^6.9.0`, `build_runner: ^2.5.0` | // @version-check json_serializable — EXAMPLE pin |
+| Image Picker | image_picker | `image_picker: ^1.2.0` | // @version-check image_picker — EXAMPLE pin |
+| Charts | fl_chart | `fl_chart: ^1.0.0` | // @version-check fl_chart — EXAMPLE pin |
+| Permissions | permission_handler | `permission_handler: ^12.0.0` | // @version-check permission_handler — EXAMPLE pin |
+| Local Notifications | flutter_local_notifications | `flutter_local_notifications: ^18.0.0` | // @version-check flutter_local_notifications — EXAMPLE pin |
+| Firebase Core | firebase_core | `firebase_core: ^4.2.0` | // @version-check firebase_core — EXAMPLE pin |
+| Firebase Auth | firebase_auth | `firebase_auth: ^6.1.0` | // @version-check firebase_auth — EXAMPLE pin |
+| SVG | flutter_svg | `flutter_svg: ^2.0.17` | // @version-check flutter_svg — EXAMPLE pin |
+| PDF | printing + pdf | `printing: ^5.14.0`, `pdf: ^3.12.0` | // @version-check printing — EXAMPLE pin |
+| Deep Links | app_links | `app_links: ^6.4.0` | // @version-check app_links — EXAMPLE pin |
+| Device Info | device_info_plus | `device_info_plus: ^12.1.0` | // @version-check device_info_plus — EXAMPLE pin |
 
-> **ALWAYS check pub.dev for latest versions.** Use `flutter pub upgrade --major-versions` and `flutter pub deps`.
+> **ALWAYS check pub.dev for latest versions.** All version pins in this document are EXAMPLES and must be verified before use.
+> Use `flutter pub upgrade --major-versions` and `flutter pub deps` to audit your project.
 
 ## Flutter Testing
 
@@ -236,6 +283,7 @@ void main() { IntegrationTestWidgetsFlutterBinding.ensureInitialized(); main(); 
 ## Flutter Build Configurations
 
 ```kotlin
+// @version-check Android build config — EXAMPLE minSdk/targetSdk, verify
 // android/app/build.gradle.kts
 android {
     defaultConfig {
