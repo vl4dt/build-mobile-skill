@@ -64,6 +64,13 @@ xcrun simctl list devices && xcrun simctl boot "iPhone 16"
 xcodebuild -workspace ios/Runner.xcworkspace -scheme Runner -configuration Release -sdk iphoneos build
 ```
 
+### Linux (desktop + Android dev)
+```bash
+# Setup: sudo apt install openjdk-21-jdk clang cmake git ninja-build libgtk-3-dev
+flutter create my_app --platforms linux && flutter build linux --release
+# AppImage, Flatpak, snap, .deb → see REFERENCE-LINUX.md
+```
+
 ## ⚡ Quick Commands
 
 | Action | Android | Flutter | KMP | iOS |
@@ -73,16 +80,9 @@ xcodebuild -workspace ios/Runner.xcworkspace -scheme Runner -configuration Relea
 | Run tests | `./gradlew test` | `flutter test` | `./gradlew :shared:allTests` | `xcodebuild test` |
 | Lint/check | `./gradlew app:lint` | `flutter analyze` | `./gradlew :shared:jvmLint` | `xcrun swiftlint` |
 | Clean | `./gradlew clean` | `flutter clean` | `./gradlew clean` | `xcodebuild clean` |
-| **See full reference** | [REFERENCE-GRADLE.md](REFERENCE-GRADLE.md) | [REFERENCE-FLUTTER.md](REFERENCE-FLUTTER.md) | [REFERENCE-GRADLE.md](REFERENCE-GRADLE.md) | [REFERENCE-SWIFTUI.md](REFERENCE-SWIFTUI.md) |
-| **Real-world example** | — | [REFERENCE-FLUTTER-EXAMPLE.md](REFERENCE-FLUTTER-EXAMPLE.md) | — | — |
+| **Example app** | — | [REFERENCE-FLUTTER-EXAMPLE.md](REFERENCE-FLUTTER-EXAMPLE.md) | — | — |
 | **Decision guide** | — | [REFERENCE-DECISIONS.md](REFERENCE-DECISIONS.md) | [REFERENCE-DECISIONS.md](REFERENCE-DECISIONS.md) | [REFERENCE-DECISIONS.md](REFERENCE-DECISIONS.md) |
-
-### Debugging & Audit
-```bash
-adb logcat -s MainActivity && adb shell dumpsys gfxinfo com.example.app
-log stream --predicate 'process == "simulator"' --level debug
-./scripts/android-env.sh && ./scripts/ios-env.sh && ./scripts/version-sync.sh
-```
+| **Linux guide** | — | [REFERENCE-LINUX.md](REFERENCE-LINUX.md) | — | — |
 
 ---
 
@@ -91,9 +91,10 @@ log stream --predicate 'process == "simulator"' --level debug
 | Reference | Covers |
 |---|---|
 | [REFERENCE-GRADLE.md](REFERENCE-GRADLE.md) | Gradle templates, KMP structure, Android deps, ADB, emulators, release builds |
-| [REFERENCE-FLUTTER.md](REFERENCE-FLUTTER.md) | Project scaffolding, pubspec, state management (Provider/Riverpod/BLoC), go_router, dependencies |
-| [REFERENCE-FLUTTER-EXAMPLE.md](REFERENCE-FLUTTER-EXAMPLE.md) | Complete real-world Flutter app: auth+list+detail, repository pattern, error handling, deep links, device info |
-| [REFERENCE-COMPOSE.md](REFERENCE-COMPOSE.md) | Layouts, theming, Material3, Navigation, ViewModel, bottom sheets, dialogs, snackbars, forms |
-| [REFERENCE-SWIFTUI.md](REFERENCE-SWIFTUI.md) | App lifecycle, layouts, ViewModifiers, animations, testing, Charts, Maps, accessibility, remote Mac |
-| [REFERENCE-KMP-IO.md](REFERENCE-KMP-IO.md) | KMP→iOS Xcode integration (SPM, CocoaPods, project reference), Swift interop, testing from Swift |
-| [REFERENCE-DECISIONS.md](REFERENCE-DECISIONS.md) | Provider vs Riverpod vs BLoC, KMP vs Flutter, Compose vs native, platform matrix, troubleshooting, FAQ |
+| [REFERENCE-FLUTTER.md](REFERENCE-FLUTTER.md) | Scaffolding, pubspec, state management (Provider/Riverpod/BLoC), go_router, dependencies |
+| [REFERENCE-FLUTTER-EXAMPLE.md](REFERENCE-FLUTTER-EXAMPLE.md) | Real-world Flutter app: auth+list+detail, repository, error handling, deep links |
+| [REFERENCE-COMPOSE.md](REFERENCE-COMPOSE.md) | Layouts, theming, Material3, Navigation, ViewModel, bottom sheets, dialogs, forms |
+| [REFERENCE-SWIFTUI.md](REFERENCE-SWIFTUI.md) | Lifecycle, layouts, ViewModifiers, animations, testing, Charts, Maps, remote Mac |
+| [REFERENCE-KMP-IO.md](REFERENCE-KMP-IO.md) | KMP→iOS Xcode integration (SPM, CocoaPods, project reference), Swift interop |
+| [REFERENCE-DECISIONS.md](REFERENCE-DECISIONS.md) | Provider vs Riverpod vs BLoC, KMP vs Flutter, Compose vs native, troubleshooting, FAQ |
+| [REFERENCE-LINUX.md](REFERENCE-LINUX.md) | SDK install (apt/dnf/pacman), Flutter Linux desktop, AppImage/Flatpak/snap, KVM emulator |
