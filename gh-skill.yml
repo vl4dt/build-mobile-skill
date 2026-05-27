@@ -6,6 +6,6 @@ skills:
   - name: build-mobile
     path: build-mobile/SKILL.md
     description: Android, Flutter, KMP, and SwiftUI development toolkit with SDK tooling workflows, cross-platform compatibility matrices, and iOS/macOS remote Mac build guidance.
-    source: github:vl4dt/build-mobile-skill-skill
+    source: github:vl4dt/build-mobile-skill
     license: Apache-2.0
     version: 2.0.0
