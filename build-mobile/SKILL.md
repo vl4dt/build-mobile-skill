@@ -2,7 +2,7 @@
 name: build-mobile
 version: 2.0.0
 description: Android, Flutter, KMP, and SwiftUI development toolkit with SDK tooling workflows, cross-platform compatibility matrices, and iOS/macOS remote Mac build guidance.
-source: github:vl4dt/android-dev-skill/build-mobile
+source: github:vl4dt/build-mobile
 license: Apache-2.0
 ---
 

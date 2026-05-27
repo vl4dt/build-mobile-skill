@@ -5,6 +5,7 @@
 [![License: Apache-2.0](https://img.shields.io/badge/License-Apache--2.0-blue.svg)](LICENSE)
 [![Agent Skills](https://custom-icon-badges.demolab.com/badge/Agent%20Skills-9cf?logo=star&logoColor=fff)](https://agentskills.io)
 [![gh skill](https://img.shields.io/badge/gh--skill-supported-444?label=compatible)](https://cli.github.com/manual/gh_skill)
+[![GitHub release](https://img.shields.io/github/v/release/vl4dt/build-mobile)](https://github.com/vl4dt/build-mobile/releases)
 
 ## Overview
 
@@ -27,25 +28,25 @@ This skill gives AI coding agents deep expertise in **Android, Flutter, Kotlin M
 
 ```bash
 # Install from this repository
-gh skill install vl4dt/android-dev-skill build-mobile
+gh skill install vl4dt/build-mobile
 
 # Or pin to a specific release
-gh skill install vl4dt/android-dev-skill build-mobile --pin v2.0.0
+gh skill install vl4dt/build-mobile --pin v2.0.0
 ```
 
 ### Via Pi (pi-mono)
 
 ```bash
 # Install directly from GitHub
-pi install git+https://github.com/vl4dt/android-dev-skill.git#build-mobile
+pi install git+https://github.com/vl4dt/build-mobile.git
 ```
 
 ### Manual
 
 ```bash
 # Clone and symlink
-git clone https://github.com/vl4dt/android-dev-skill.git
-ln -s $(pwd)/android-dev-skill/build-mobile ~/.pi/agent/skills/build-mobile
+git clone https://github.com/vl4dt/build-mobile.git
+ln -s $(pwd)/build-mobile ~/.pi/agent/skills/build-mobile
 ```
 
 ## Compatible Agent Hosts

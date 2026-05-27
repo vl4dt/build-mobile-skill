@@ -5,7 +5,7 @@ Thank you for your interest in contributing! This guide covers how to modify, te
 ## Directory Structure
 
 ```
-android-dev-skill/
+build-mobile-skill/
 ├── README.md
 ├── LICENSE
 ├── CONTRIBUTING.md
@@ -25,7 +25,7 @@ android-dev-skill/
 2. **Test locally** by pointing pi to your local copy:
    ```bash
    # Option 1: Symlink
-   ln -sf $(pwd)/android-dev-skill/build-mobile ~/.pi/agent/skills/build-mobile
+   ln -sf $(pwd)/build-mobile-skill/build-mobile ~/.pi/agent/skills/build-mobile
 
    # Option 2: Copy
    cp -r build-mobile ~/.pi/agent/skills/build-mobile

@@ -54,5 +54,5 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Compatibility matrices
 - Quick reference commands
 
-[unreleased]: https://github.com/vl4dt/android-dev-skill/compare/v1.0.0...HEAD
-[1.0.0]: https://github.com/vl4dt/android-dev-skill/releases/tag/v1.0.0
+[unreleased]: https://github.com/vl4dt/build-mobile/compare/v1.0.0...HEAD
+[1.0.0]: https://github.com/vl4dt/build-mobile/releases/tag/v1.0.0
