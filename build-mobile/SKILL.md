@@ -73,6 +73,9 @@ xcodebuild -workspace ios/Runner.xcworkspace -scheme Runner -configuration Relea
 | Run tests | `./gradlew test` | `flutter test` | `./gradlew :shared:allTests` | `xcodebuild test` |
 | Lint/check | `./gradlew app:lint` | `flutter analyze` | `./gradlew :shared:jvmLint` | `xcrun swiftlint` |
 | Clean | `./gradlew clean` | `flutter clean` | `./gradlew clean` | `xcodebuild clean` |
+| **See full reference** | [REFERENCE-GRADLE.md](REFERENCE-GRADLE.md) | [REFERENCE-FLUTTER.md](REFERENCE-FLUTTER.md) | [REFERENCE-GRADLE.md](REFERENCE-GRADLE.md) | [REFERENCE-SWIFTUI.md](REFERENCE-SWIFTUI.md) |
+| **Real-world example** | — | [REFERENCE-FLUTTER-EXAMPLE.md](REFERENCE-FLUTTER-EXAMPLE.md) | — | — |
+| **Decision guide** | — | [REFERENCE-DECISIONS.md](REFERENCE-DECISIONS.md) | [REFERENCE-DECISIONS.md](REFERENCE-DECISIONS.md) | [REFERENCE-DECISIONS.md](REFERENCE-DECISIONS.md) |
 
 ### Debugging & Audit
 ```bash
