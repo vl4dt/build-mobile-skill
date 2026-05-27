@@ -83,6 +83,7 @@ flutter test                                   # Flutter
 
 ## Advanced
 
-See [REFERENCE-GRADLE.md](REFERENCE-GRADLE.md) for Gradle templates, KMP structure, Compose testing.
+See [REFERENCE-GRADLE.md](REFERENCE-GRADLE.md) for Gradle templates, KMP structure.
 See [REFERENCE-FLUTTER.md](REFERENCE-FLUTTER.md) for pubspec, folder structure, state management.
+See [REFERENCE-COMPOSE.md](REFERENCE-COMPOSE.md) for Compose testing patterns.
 See [REFERENCE-SWIFTUI.md](REFERENCE-SWIFTUI.md) for SwiftUI, Xcode CLI, remote Mac setup.
