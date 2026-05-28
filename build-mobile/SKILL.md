@@ -97,4 +97,5 @@ flutter create my_app --platforms linux && flutter build linux --release
 | [REFERENCE-SWIFTUI.md](REFERENCE-SWIFTUI.md) | Lifecycle, layouts, ViewModifiers, animations, testing, Charts, Maps, remote Mac |
 | [REFERENCE-KMP-IO.md](REFERENCE-KMP-IO.md) | KMP→iOS Xcode integration (SPM, CocoaPods, project reference), Swift interop |
 | [REFERENCE-DECISIONS.md](REFERENCE-DECISIONS.md) | Provider vs Riverpod vs BLoC, KMP vs Flutter, Compose vs native, troubleshooting, FAQ |
+| [REFERENCE-ANDROID-IDE.md](REFERENCE-ANDROID-IDE.md) | Android Studio Flutter recognition, .idea regeneration, Kotlin cache corruption (Windows), go_router route ordering, IDE cache invalidation |
 | [REFERENCE-LINUX.md](REFERENCE-LINUX.md) | SDK install (apt/dnf/pacman), Flutter Linux desktop, AppImage/Flatpak/snap, KVM emulator |
